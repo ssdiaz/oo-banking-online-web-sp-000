@@ -16,7 +16,7 @@ class Transfer
 
   def execute_transaction#(sender, receiver, amount)
 
-    if (sender.balance > amount && status == "pending" && self.vaid?)
+    if (sender.balance > amount && status == "pending" && vaid?)
       #  while self.status == "pending"
           sender.balance = sender.balance - amount
           receiver.deposit(amount)
