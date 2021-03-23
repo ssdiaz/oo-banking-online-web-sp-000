@@ -17,7 +17,8 @@ class Transfer
 
   def execute_transaction#(sender, receiver, amount)
 
-    if (sender.balance > amount && sender.status == "open" && status == "pending")
+  #  if (sender.balance > amount && sender.status == "open" && status == "pending")
+    if (sender.balance > amount && sender.status == "open" )
       #  while self.status == "pending"
           sender.balance = sender.balance - amount
           receiver.deposit(amount)
