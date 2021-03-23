@@ -11,13 +11,12 @@ class Transfer
   end
 
   def valid?
-    #sender.status == "open" && receiver.status == "open"
     sender.valid? && receiver.valid?
   end
 
   def execute_transaction#(sender, receiver, amount)
 
-    if (sender.balance > amount && status == "pending")
+    if (sender.balance > amount && status == "pending" &&self.vaid?)
       #  while self.status == "pending"
           sender.balance = sender.balance - amount
           receiver.deposit(amount)
