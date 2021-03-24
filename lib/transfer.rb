@@ -18,7 +18,7 @@ class Transfer
     #valid?
     if sender.balance > amount && self.status == "pending" && valid?
           sender.balance -= amount
-          receiver.deposit(amount)
+          receiver.balance += amount
           self.status = "complete"
     else
         print "Transaction rejected. Please check your account balance."
